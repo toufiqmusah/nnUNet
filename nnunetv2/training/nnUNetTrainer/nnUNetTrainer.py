@@ -1015,7 +1015,8 @@ class nnUNetTrainer(object):
         self.logger.log('train_losses', loss_here, self.current_epoch)
 
     def on_validation_epoch_start(self):
-        self.network.eval()
+        # self.network.eval()
+        pass
 
     def validation_step(self, batch: dict) -> dict:
         data = batch['data']
@@ -1211,7 +1212,7 @@ class nnUNetTrainer(object):
 
     def perform_actual_validation(self, save_probabilities: bool = False):
         self.set_deep_supervision_enabled(False)
-        self.network.eval()
+        # self.network.eval()
 
         if self.is_ddp and self.batch_size == 1 and self.enable_deep_supervision and self._do_i_compile():
             self.print_to_log_file("WARNING! batch size is 1 during training and torch.compile is enabled. If you "
