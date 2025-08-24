@@ -114,3 +114,6 @@ ENV/
 *.model
 
 !documentation/assets/scribble_example.png
+nnunetv2/.DS_Store
+.DS_Store
+.gitignore
