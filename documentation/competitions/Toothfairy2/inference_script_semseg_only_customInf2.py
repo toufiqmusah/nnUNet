@@ -30,7 +30,7 @@ class CustomPredictor(nnUNetPredictor):
         torch.set_num_threads(7)
         with torch.no_grad():
             self.network = self.network.to(self.device)
-            self.network.eval()
+            # self.network.eval()
 
             if self.verbose:
                 print('preprocessing')
